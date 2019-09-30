@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>计算机组成原理（一） | blackMZX</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">计算机组成原理（一）</h1><a id="logo" href="/.">blackMZX</a><p class="description">blackMZX的博客</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">计算机组成原理（一）</h1><div class="post-meta">Sep 30, 2019<span> | </span><span class="category"><a href="/categories/计算机组成原理/">计算机组成原理</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-概论"><span class="toc-number">1.</span> <span class="toc-text">第一章 概论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-计算机地发展历史"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 计算机地发展历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-计算机系统的硬件组成"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 计算机系统的硬件组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-计算机的功能部件"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 计算机的功能部件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-冯·诺依曼计算机"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 冯·诺依曼计算机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3计算机的软件系统"><span class="toc-number">1.3.</span> <span class="toc-text">1.3计算机的软件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4计算机系统的组织结构"><span class="toc-number">1.4.</span> <span class="toc-text">1.4计算机系统的组织结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-硬件与软件的关系"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1 硬件与软件的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2-计算机系统的多层次结构"><span class="toc-number">1.4.2.</span> <span class="toc-text">1.4.2 计算机系统的多层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-3-计算机硬件的组织"><span class="toc-number">1.4.3.</span> <span class="toc-text">1.4.3 计算机硬件的组织</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-计算机的工作特点和性能指标"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 计算机的工作特点和性能指标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-1-计算机的工作特点"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1 计算机的工作特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-2-计算机的性能指标"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2 计算机的性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-计算机的分类与应用"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 计算机的分类与应用</span></a></li></ol></li></ol></div></div><div class="post-content"><h1 id="第一章-概论"><a href="#第一章-概论" class="headerlink" title="第一章 概论"></a><center>第一章 概论</center></h1><p>​    本章简要介绍计算机的发展和基本组成，使读者对组成计算机中各大步尖的主要功能和一些基本术语有个初步的了解，以便在后面的各章学习中能更好地理解各大部件地组成原理。</p>
+<a id="more"></a>
+
+<h2 id="1-1-计算机地发展历史"><a href="#1-1-计算机地发展历史" class="headerlink" title="1.1 计算机地发展历史"></a>1.1 计算机地发展历史</h2><p>基本概念，略。</p>
+<h2 id="1-2-计算机系统的硬件组成"><a href="#1-2-计算机系统的硬件组成" class="headerlink" title="1.2 计算机系统的硬件组成"></a>1.2 计算机系统的硬件组成</h2><h3 id="1-2-1-计算机的功能部件"><a href="#1-2-1-计算机的功能部件" class="headerlink" title="1.2.1 计算机的功能部件"></a>1.2.1 计算机的功能部件</h3><p>​    计算机的基本功能主要包括数据加工、数据保存、数据传送和操作控制等。为了实现这些基本功能，计算机必须要有相应的功能部件（硬件）承担有关工作。计算机的硬件通常由输入设备、输出设备、运算器、存储器和控制器等5大部件组成，如图1-1所示。</p>
+<p>​    <img src="https://i.loli.net/2019/09/30/U1PIf78NA96YHRK.png" alt="图1-1 计算机系统的基本硬件"></p>
+<p><strong>1.输入设备</strong></p>
+<p>​    输入设备的主要功能是将程序和数据以机器所能识别和接受的信息形式输入计算机内。</p>
+<p><strong>2.输出设备</strong></p>
+<p>​    输出设备的主要功能是将计算机处理的结果以人们所能接受的信息形式或其他系统所要求的信息形式输出。</p>
+<p><strong>3.存储器</strong></p>
+<p>​    存储器是计算机的存储部件，是存储信息的核心，用来存放程序和数据。</p>
+<p>​    存储器分为主存储器（也称为内存储器）和辅助存储器（也成为外存储器），CPU可以直接访问的是主存储器（也成为主存），辅助存储器可以帮助主存存储更多信息，但是辅助存储器中的信息必须先调入主存才能为CPU所用。</p>
+<p>​    主存储器可以类比为一座酒店，酒店中的一个个房间就如同主存中的一个个存储单元；每个存储单元都有自己唯一的门牌号，称之为地址码；存储器一般按地址访问存储单元，所以在进行读写操作时，必须先给出被访问存储单元的地址码。</p>
+<p>​    著存最基本的组成可以简化为如图1-2所示的逻辑图。存储体时存放二进制信息的主体；地址寄存器存储被访问存储单元的地址码；数据寄存器是主存与其他部件的接口，暂存从存储器独处或向存储器中写入的信息；时序控制逻辑用于产生存储器操作所需的时许信号。</p>
+<p><img src="https://i.loli.net/2019/09/30/FeuxabZvWYnUsyz.png" alt="图1-2 主存储器结构简图"></p>
+<p><strong>4.运算器</strong></p>
+<p>​    运算器是计算机的执行部件，用于对数据的执行部件，用于对数据的加工处理，完成算术运算及逻辑运算。</p>
+<p>​    运算器的核心是算术逻辑部件（Arithmetic and Logical Unit，ALU）。运算器中设有若干寄存器，用于暂存操作数据和中间结果。运算器的简单框图如图1-3所示。</p>
+<p><img src="https://i.loli.net/2019/09/30/s5v4Df816l3pR7g.png" alt="图1-3 运算器的简单框图"></p>
+<p><strong>5.控制器</strong></p>
+<p>​    控制器是整个计算机的指挥中心。程序可类比为解题步骤，控制器就是按事先安排好的解题步骤，控制计算机各个部件有条不紊地自动工作。程序以指令序列存放在存储器中，控制器是根据程序实施控制的，把这种工作方式称为存储程序方式。</p>
+<h3 id="1-2-2-冯·诺依曼计算机"><a href="#1-2-2-冯·诺依曼计算机" class="headerlink" title="1.2.2 冯·诺依曼计算机"></a>1.2.2 冯·诺依曼计算机</h3><p>​    存储程序的概念由数学家冯·诺依曼于1946年6月在研究EDVAC计算机时首先提出来，它奠定了现代计算机的结构基础，现在广泛应用的计算机仍属于冯·诺依曼的结构格式。</p>
+<p><strong>1.存储程序思想</strong></p>
+<p>1).计算机由输入设备、输出设备、运算器、存储器及控制器5大部分组成。</p>
+<p>2).采用二进制形式表示数据和指令。</p>
+<p>3).采用存储程序方式。</p>
+<p>  存储程序方式是计算机能高速自动运行的基础。</p>
+<p><strong>2.早期的冯·诺依曼计算机</strong></p>
+<p><img src="https://i.loli.net/2019/09/30/Vqsntuwvmhy6SAN.png" alt="图1-4 早期冯·诺依曼计算机的组成结构"></p>
+<p>​    在微处理器问世之前，运算器和控制器是两个分离的功能部件。</p>
+<p><strong>3.现代计算机组织结构</strong></p>
+<p>​    随着微电子技术的进步，人们成功研制出了微处理器。微处理器将运算器及控制器两个主要功能部件合二为一，集成到一个芯片内。现代计算机的基本结构仍然遵循冯·诺依曼思想。</p>
+<h2 id="1-3计算机的软件系统"><a href="#1-3计算机的软件系统" class="headerlink" title="1.3计算机的软件系统"></a>1.3计算机的软件系统</h2><p>​    本节主要介绍计算机软件的分类，在“计算机导论”中已详细介绍过，故在此略过。</p>
+<h2 id="1-4计算机系统的组织结构"><a href="#1-4计算机系统的组织结构" class="headerlink" title="1.4计算机系统的组织结构"></a>1.4计算机系统的组织结构</h2><h3 id="1-4-1-硬件与软件的关系"><a href="#1-4-1-硬件与软件的关系" class="headerlink" title="1.4.1 硬件与软件的关系"></a>1.4.1 硬件与软件的关系</h3><p>​    一个计算机系统由硬件及软件两大部分组成。硬件是计算机系统的物质基础，软件是计算机系统的灵魂。如若针对某一具体的功能，即可以用硬件实现，也可以用软件来实现，由此硬件和软件在逻辑上是等效的。</p>
+<h3 id="1-4-2-计算机系统的多层次结构"><a href="#1-4-2-计算机系统的多层次结构" class="headerlink" title="1.4.2 计算机系统的多层次结构"></a>1.4.2 计算机系统的多层次结构</h3><p>​    计算机系统的多层次结构，就是根据从各个角度所看到的机器之间的有机联系，愤青彼此之间的界面，明确各自的功能，以便构成合理、高效的计算机系统。</p>
+<p>​    计算机系统层次结构的分层方式尚无同一的标准，故本篇博文采用张功萱编著的《计算机组成原理（修订版）》中采用的层次结构，如图1-5所示。</p>
+<p><img src="https://i.loli.net/2019/09/30/JVSCsdzeruQiEpo.png" alt="图1-5 计算机系统的多级层次结构"></p>
+<h3 id="1-4-3-计算机硬件的组织"><a href="#1-4-3-计算机硬件的组织" class="headerlink" title="1.4.3 计算机硬件的组织"></a>1.4.3 计算机硬件的组织</h3><p>​    在计算机系统的5大部件之间，有大量的信息需要传送，如何实现信息的传送，取决于数据通路的逻辑结构。早期的计算机往往在各部件间之间连接传送路线，数据通路复杂、凌乱，控制不便而且扩展性较差。现代的计算机则普遍采用总线结构。</p>
+<p>​    总线是一组可以为多个功能部件共享的公共信息传送线路，为了保证总线上的信息不会发生冲突，共享总线的各个部件必须分时使用总线传送消息，但各个部件可以同时接受消息。</p>
+<p><strong><em>按任务，可把总线分为以下几种类型：</em></strong></p>
+<p><strong>1.CPU内部总线</strong></p>
+<p>​    这是一级数据线，用来连接CPU内部各寄存器和算术逻辑部件的总线。</p>
+<p><strong>2.部件内总线</strong></p>
+<p><strong>3.系统总线</strong></p>
+<p>​    这是连接系统内各大部件如CPU、主存、I/O设备等的总线，是连接整机系统的基础。</p>
+<p><strong>4.外总线</strong></p>
+<p>​    这是计算机系统之间或计算机系统与其他系统之间的通信总线。</p>
+<p><strong><em>按总线传输方向分，总线又可分为以下两种：</em></strong></p>
+<p><strong>1.单总线</strong></p>
+<p>​    如图1-6所示是以总线为基础的微、小型机的典型结构，这是一种单总线结构，通过一组系统总线（数据线、地址线、控制线）把CPU、存储器及各种I/O接口连接起来。</p>
+<p><img src="https://i.loli.net/2019/09/30/tfiFELrgxzsyNGo.png" alt="图1-6 计算机的但总线结构"></p>
+<p><strong>2.双总线</strong></p>
+<p>1).面向存储器的单总线</p>
+<p>​    单总线由于其特点，大大限制了系统速度。因此在CPU与主存之间增加了一组存储总线，CPU访存直接通过存储器总线实现。</p>
+<p><img src="https://i.loli.net/2019/09/30/IjZxuCnTcBy9dHO.png" alt="图1-7 面向存储器的双总线结构"></p>
+<p>2).以CPU为中心的双总线结构</p>
+<p>​    这种结构有两组总线，一组为存储器总线，他是CPU与主存之间的信息传输通路；另一组为I/O总线，他是CPU与I/O设备之间信息交换的通路。这种结构的优点是比较简单，但是主存与I/O设备之间的信息传输需要通过CPU，使CPU需要花费大量时间进行信息的输入与输出，从而降低了CPU的工作效率。</p>
+<p><img src="https://i.loli.net/2019/09/30/IjZxuCnTcBy9dHO.png" alt="图1-8 以CPU为中心的双总线结构"></p>
+<h2 id="1-5-计算机的工作特点和性能指标"><a href="#1-5-计算机的工作特点和性能指标" class="headerlink" title="1.5 计算机的工作特点和性能指标"></a>1.5 计算机的工作特点和性能指标</h2><h3 id="1-5-1-计算机的工作特点"><a href="#1-5-1-计算机的工作特点" class="headerlink" title="1.5.1 计算机的工作特点"></a>1.5.1 计算机的工作特点</h3><p><strong>1.能连续工作</strong></p>
+<p><strong>2.运算速度快</strong></p>
+<p><strong>3.运算精度高</strong></p>
+<p><strong>4.具有很强的存储能力和逻辑判断能力</strong></p>
+<p><strong>5.通用性强</strong></p>
+<h3 id="1-5-2-计算机的性能指标"><a href="#1-5-2-计算机的性能指标" class="headerlink" title="1.5.2 计算机的性能指标"></a>1.5.2 计算机的性能指标</h3><p><strong>1.基本字长</strong></p>
+<p>​    基本字长是指参与运算的数的基本位数。字长标志着运算精度，当i位十进制数与j位二进制数比较时，存在下列等式：<br>$$<br>10^i=2^j<br>$$</p>
+<p>​    两边取对数得：<br>$$<br>\dfrac{j}{i} = \frac{ln10}{ln2}=3.3<br>$$<br>​    可见，要保证i位十进制数的精度，至少要采用3.3被j位二进制数的位数，否则精度难以满足要求。</p>
+<p><strong>2.主存容量</strong></p>
+<p>​    主存储器所能存储的最大信息量称为主存容量。</p>
+<p><strong>3.运算速度</strong></p>
+<p>​    由于计算机执行不同操作所用的时间可能不同，因而对运算速度的描述通常采用不同的方法。第一种方法是以假发指令的执行时间为标准来计算；第二种方法是根据不同指令在程序中出现的频度，乘上不同的系数，求得系统平均值，得到平均运算速度；第三种是具体指明每条指令的执行时间。</p>
+<p>​    目前，计算机文献中常使用每秒平均执行的指令条数（IPS）作为运算速度单位，如MIPS（每秒百万条指令）或MFLOPS（每秒百万个浮点运算）。<br>$$<br>MIPS=\dfrac{指令条数}{执行时间}\times10^-6<br>$$</p>
+<p>$$<br>MFLOPS=\dfrac{浮点运算次数}{执行时间}\times10^-6<br>$$</p>
+<p>$$<br>MFLOPS\approx3\sim4MIPS<br>$$</p>
+<p><strong>4.所配置的外部设备及其性能指标</strong></p>
+<p><strong>5.系统软件的配置</strong></p>
+<h2 id="1-6-计算机的分类与应用"><a href="#1-6-计算机的分类与应用" class="headerlink" title="1.6 计算机的分类与应用"></a>1.6 计算机的分类与应用</h2><p>​    本节主要介绍计算机软件的分类，在“计算机导论”中已详细介绍过，故在此略过。</p>
+</div><div class="tags"><a href="/tags/学习/">学习</a></div><div class="post-nav"><a class="next" href="/2019/09/17/编译原理（一）/">编译原理（一）</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://yoursite.com"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/编译原理/">编译原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/学习/" style="font-size: 15px;">学习</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/09/30/计算机组成原理（一）/">计算机组成原理（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/17/编译原理（一）/">编译原理（一）</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://www.zhihu.com/people/ma-zhao-xu-6/activities" title="我的知乎" target="_blank">我的知乎</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">blackMZX.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
