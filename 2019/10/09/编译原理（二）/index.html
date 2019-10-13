@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>编译原理（第二章） 未完待续 | blackMZX</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">编译原理（第二章） 未完待续</h1><a id="logo" href="/.">blackMZX</a><p class="description">blackMZX的博客</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">编译原理（第二章） 未完待续</h1><div class="post-meta">Oct 9, 2019<span> | </span><span class="category"><a href="/categories/编译原理/">编译原理</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h1 id="第二章-文法和语言"><a href="#第二章-文法和语言" class="headerlink" title="第二章 文法和语言"></a><center>第二章 文法和语言</center></h1><p>​    阐明语法的一个工具是文法，这是形式语言理论的基本概念之一。本章将介绍文法和语言的概念，重点讨论上下文无关文法及其举行分析中的有关问题。</p>
+<a id="more"></a>
+
+<h2 id="2-1-符号和符号串"><a href="#2-1-符号和符号串" class="headerlink" title="2.1 符号和符号串"></a>2.1 符号和符号串</h2><p><strong>1.字母表</strong></p>
+<p>​    字母表是元素的非空又穷集合，字母表中的元素称为符号，因此字母表也称为符号表。</p>
+<p><strong>2.符号串</strong></p>
+<p>​    由字母表中的符号组成的任何有穷序列称为符号串。在符号串中，符号的顺序是十分重要的，例如符号串ab就不同于符号串ba。如果符号串x中有m个符号，则称其长度为m，表示为|x|=m，允许空符号串，即不包含任何符号的符号串，用&epsilon;表示，其长度为0，即|&epsilon;|=0。</p>
+<p>​    下面介绍有关符号串的一些运算：</p>
+<p>​    1）.符号串的头尾，固有头和固有尾</p>
+<p>​    例如，z=xy是一字符串，那么x是z的头，y是z的尾；如果x是非空的，那么y是固有尾，同样，如果y是非空的，那么x是固有头。设z=abc，那么z的头是&epsilon;，a，ab，abc；除abc外，其他头都是固有头；z的尾是&epsilon;，c，bc，abc；z的固有尾是&epsilon;，c和bc。</p>
+<p>​    2）.符号串的连接</p>
+<p>​    设x和y是符号串，他们的连接xy是把y的符号写在x的符号之后得到的字符串。由于&epsilon;的含义，显然有&epsilon;x=x&epsilon;=x。</p>
+<p>​    3）.符号串的方幂</p>
+<p>​    设x是符号串，把x自身连接n次得到符号串z，即z=xx···xx，称为符号串x的方幂，写作z=x<sup>n</sup>，即把符号串x相继地重写n次。对于n&gt;0，有x<sup>n</sup>=xx<sup>n-1</sup>=x<sup>n-1</sup>x。</p>
+<p>​    4）.符号串集合</p>
+<p>​    若集合A中地一切元素都是某字母表上的符号串，则称A为该字母表上的符号串集合。两个符号串集合A和B的乘积定义如下：AB={xy|x&isin;A且y&isin;B}。</p>
+<p>​    指定字母表&sum;之后，可用&sum;<sup>*</sup>表示&sum;上的所有有穷长的串的集合。</p>
+<p>​    &sum;<sup>*</sup>称为集合&sum;的闭包。而&sum;<sup>+</sup>=&sum;<sup>0</sup>&cup;&sum;<sup>1</sup>&cup;&sum;<sup>2</sup>···&sum;<sup>n</sup>称为&sum;的正闭包。显然有<br>$$<br>\sum*=\sum0\cup\sum+<br>$$</p>
+<p>$$<br>\sum+=\sum\sum<em>=\sum</em>\sum<br>$$</p>
+<p>​    &sum;<sup>*</sup>具有可数的无穷数量的元素。</p>
+<h2 id="2-2-文法和语言的形式定义"><a href="#2-2-文法和语言的形式定义" class="headerlink" title="2.2 文法和语言的形式定义"></a>2.2 文法和语言的形式定义</h2><p>​    <strong>规则</strong>，也称为<strong>重写规则</strong>、<strong>产生式</strong>或<strong>生成式</strong>，是形如&alpha;&rarr;&beta;或&alpha;::=&beta;的（&alpha;，&beta;）有序对，其中&alpha;称为规则的左部，&beta;称为规则的右部，这里使用符号&rarr;（::=）读作“定义为”。</p>
+<blockquote>
+<p><strong>定义2.1</strong> 文法G定义为四元组（V<sub>N</sub>,V<sub>T</sub>,P,S）。</p>
+<p>其中V<sub>N</sub>为非终结符（或语法实体，或变量）集；V<sub>T</sub>为终结符集；P为规则（&alpha;&rarr;&beta;）的集合，&alpha;&isin;(V<sub>N</sub>&cup;V<sub>T</sub>)<sup>&#42;</sup>且至少包含一个非终结符，&beta;&isin;(V<sub>N</sub>&cup;V<sub>T</sub>)<sup>*</sup>；V<sub>N</sub>，V<sub>T</sub>和P都是非空有穷集。S称作识别符或开始符，它是一个非终结符，至少要在一条规则作为左部出现。</p>
+<p>V<sub>N</sub>和V<sub>T</sub>不含公共元素，即V<sub>N</sub>&cap;V<sub>T</sub>=&empty;。</p>
+<p>通常用V表示V<sub>N</sub>&cup;V<sub>T</sub>，V称为文法G的字母表或字汇表。</p>
+<p>还有一种习惯写法，将G写成G[S],其中S是识别符。</p>
+</blockquote>
+<p>​    为定义文法所产生的语言，还需要引入<strong>推导</strong>的概念，即定义“V”中的符号之间的关系：直接推导&rArr;、长度为n（n&ge;1）的推导&rArr;<sup>+</sup>和长度为n（n&ge;0）的推导&rArr;<sup>&#42;</sup>。</p>
+<blockquote>
+<p><strong>定义2.2</strong>  设&alpha;&rarr;&beta;是文法G=(V<sub>N</sub>,V<sub>T</sub>,P,S)的规则（或者说是P的一个产生式），&gamma;和&delta;是V<sup>&#42;</sup>中的任意符号，若有符号串&nu;和&omega;满足<br>$$<br>\nu=\gamma\alpha\delta,\ \omega=\gamma\beta\delta<br>$$<br>则说&nu;（应用规则&alpha;&rarr;&beta;）直接产生&omega;，或者说&nu;是&nu;的<strong>直接推导</strong>，或者说&omega;直接<strong>归约</strong>到&nu;，记作&nu;&rArr;&omega;。</p>
+</blockquote>
+<blockquote>
+<p><strong>定义2.3</strong> 如果存在直接推导的序列<br>$$<br>\nu=\omega_0\rArr\omega_1\rArr\omega_2····\omega_n=\omega(n&gt;0)<br>$$<br>则称&nu;推导出（产生）&omega;（推导长度为n），或&omega;归约到&nu;，记作&nu;&rArr;<sup>&#42;</sup>&omega;。</p>
+</blockquote>
+<blockquote>
+<p><strong>定义2.4</strong> 若有&nu;&rArr;<sup>*</sup>&omega;，或&nu;=&omega;，则记作&nu;&rArr;<sup>&#42;</sup>&omega;。</p>
+</blockquote>
+<blockquote>
+<p><strong>定义2.5</strong> 设G[S]是一个文法，如果符号串x是从识别符号推导出来的，即有S&rArr;<sup>*</sup>x，则称x是文法G[S]的<strong>句型</strong>。若x仅由终结符号组成，即S&rArr;<sup>&#42;</sup>x，x&isin;V<sub>T</sub><sup>&#42;</sup>，则称x为G[S]的<strong>句子</strong>。</p>
+</blockquote>
+<blockquote>
+<p><strong>定义2.6</strong> 文法G所产生的语言定义为集合{x|S&rArr;<sup>*</sup>x，其中S为文法识别符号，且x&isin;V<sub>T</sub><sup>&#42;</sup>}。可用L(G)表示该集合。</p>
+</blockquote>
+<p>​    从定义2.6可以看出两点：第一，符号串x可从识别符号推出，即x是句型；第二，x仅由终结符组成，即x是文法G的句子。也就是说，<strong>文法描述的语言是该文法一切句子的集合</strong>。</p>
+<blockquote>
+<p><strong>定义2.7</strong> 若L(G1)=L(G2)，则称<strong>文法G1和文法G2是等价的</strong>。</p>
+</blockquote>
+<h2 id="2-3-文法的类型"><a href="#2-3-文法的类型" class="headerlink" title="2.3 文法的类型"></a>2.3 文法的类型</h2></div><div class="tags"><a href="/tags/学习/">学习</a></div><div class="post-nav"><a class="pre" href="/2019/10/13/洛谷1008/">洛谷 P1008 三连击</a><a class="next" href="/2019/10/04/计算机组成原理（二）/">计算机组成原理（第二章） 未完待续</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://yoursite.com"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/程序设计/">程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编译原理/">编译原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/学习/" style="font-size: 15px;">学习</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/13/洛谷1008/">洛谷 P1008 三连击</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/09/编译原理（二）/">编译原理（第二章） 未完待续</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/04/计算机组成原理（二）/">计算机组成原理（第二章） 未完待续</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/30/计算机组成原理（一）/">计算机组成原理（第一章）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/17/编译原理（一）/">编译原理（第一章）</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://www.zhihu.com/people/ma-zhao-xu-6/activities" title="我的知乎" target="_blank">我的知乎</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">blackMZX.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
